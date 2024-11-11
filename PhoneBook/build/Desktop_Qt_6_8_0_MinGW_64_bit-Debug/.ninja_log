@@ -1,9 +1,0 @@
-# ninja log v6
-7	665	7530216285517674	PhoneBook_autogen/timestamp	1a8a7b63d389eab9
-7	665	7530216285517674	PhoneBook_autogen/mocs_compilation.cpp	1a8a7b63d389eab9
-7	665	7530216285517674	C:/Users/Rui Pires/Team02-WarmUp/Module03/PhoneBook/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/PhoneBook_autogen/timestamp	1a8a7b63d389eab9
-7	665	7530216285517674	C:/Users/Rui Pires/Team02-WarmUp/Module03/PhoneBook/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/PhoneBook_autogen/mocs_compilation.cpp	1a8a7b63d389eab9
-671	2627	7530216286343280	CMakeFiles/PhoneBook.dir/PhoneBook_autogen/mocs_compilation.cpp.obj	72230894ce3ede0f
-676	2657	7530216286393288	CMakeFiles/PhoneBook.dir/main.cpp.obj	85d2311c557e4746
-681	2707	7530216286445770	CMakeFiles/PhoneBook.dir/mainwindow.cpp.obj	3b5b724048faa073
-2708	2942	7530216306710872	PhoneBook.exe	5366cd29d4ed0ec0
