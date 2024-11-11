@@ -1,0 +1,205 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d63c27210e63f1e31151.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ex00",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00-Debug-f95fe07ec979b73519bb.json",
+					"name" : "ex00",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00_autogen-Debug-9f3809e033a2aeae414e.json",
+					"name" : "ex00_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00_autogen_timestamp_deps-Debug-f07d2af82fe0f9a954c6.json",
+					"name" : "ex00_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-9f16b6c7b6ce8a6311ec.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ex00",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00-Release-c9aa0dd6fde42075c784.json",
+					"name" : "ex00",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00_autogen-Release-fc3e295c5d24e358a11b.json",
+					"name" : "ex00_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00_autogen_timestamp_deps-Release-f07d2af82fe0f9a954c6.json",
+					"name" : "ex00_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-ff04246d152eb5c428b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ex00",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00-RelWithDebInfo-662ba2f7e544150e3f11.json",
+					"name" : "ex00",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00_autogen-RelWithDebInfo-d65ca7df12febd889148.json",
+					"name" : "ex00_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex00_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex00_autogen_timestamp_deps-RelWithDebInfo-f07d2af82fe0f9a954c6.json",
+					"name" : "ex00_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build",
+		"source" : "C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
