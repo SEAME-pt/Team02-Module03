@@ -1,21 +1,33 @@
 #pragma once
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
+#include <QObject>
 #include "./Contact.hpp"
 
-class ContactList
+class ContactList : public QObject
 {
+    Q_OBJECT
+
 private:
     std::vector<Contact*> _contactList;
+    const std::string _database; 
 
 public:
-    ContactList();
+    ContactList(QObject *parent = nullptr);
     ~ContactList();
     ContactList(const ContactList& originalContactList);
     ContactList& operator=(const ContactList& originalContactList);
 
-    void addContact(Contact &contactToAdd);
-    void removeContact(unsigned int phoneNumber);
-    Contact* searchContact(unsigned int phoneNumber);
+    void createDatabase();
+
+signals:
+    void sendContactListSignal(std::vector<Contact*> &contactList);
+
+public slots:
+    void addContact(Contact *contact);
+    void removeContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber);
+    void sendContactList(void);
 };

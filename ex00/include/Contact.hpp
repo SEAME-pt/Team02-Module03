@@ -7,7 +7,7 @@ class Contact
 private:
     std::string _name;
     std::string _email;
-    unsigned int _phoneNumber;
+    std::string _phoneNumber;
 
 public:
     Contact();
@@ -17,9 +17,9 @@ public:
 
     void setName(const std::string &name);
     void setEmail(const std::string &email);
-    void setPhoneNumber(unsigned int phoneNumber);
+    void setPhoneNumber(const std::string &phoneNumber);
 
     const std::string &getName(void) const;
     const std::string &getEmail(void) const;
-    unsigned int getPhoneNumber(void) const;
+    const std::string &getPhoneNumber(void) const;
 };

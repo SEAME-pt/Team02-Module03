@@ -36,7 +36,7 @@ void Contact::setEmail(const std::string& email)
     this->_email = email;
 }
 
-void Contact::setPhoneNumber(unsigned int phoneNumber)
+void Contact::setPhoneNumber(const std::string& phoneNumber)
 {
     this->_phoneNumber = phoneNumber;
 }
@@ -53,7 +53,7 @@ const std::string& Contact::getEmail(void) const
 }
 
 
-unsigned int Contact::getPhoneNumber(void) const
+const std::string& Contact::getPhoneNumber(void) const
 {
     return this->_phoneNumber;
 }

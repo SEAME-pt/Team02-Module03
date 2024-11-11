@@ -50,6 +50,8 @@ build CMakeFiles/ex00.dir/RelWithDebInfo/ex00_autogen/mocs_compilation_RelWithDe
   INCLUDES = -I"C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/include_RelWithDebInfo" -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\ex00.dir\RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles\ex00.dir\RelWithDebInfo\ex00_autogen
+  TARGET_COMPILE_PDB = CMakeFiles\ex00.dir\RelWithDebInfo\
+  TARGET_PDB = RelWithDebInfo\ex00.pdb
 
 build CMakeFiles/ex00.dir/RelWithDebInfo/src/Contact.cpp.obj: CXX_COMPILER__ex00_unscanned_RelWithDebInfo C$:/Users/Rui$ Pires/Team02-WarmUp/Module03/ex00/src/Contact.cpp || cmake_object_order_depends_target_ex00_RELWITHDEBINFO
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -DCMAKE_INTDIR=\"RelWithDebInfo\"
@@ -58,6 +60,18 @@ build CMakeFiles/ex00.dir/RelWithDebInfo/src/Contact.cpp.obj: CXX_COMPILER__ex00
   INCLUDES = -I"C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/include_RelWithDebInfo" -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\ex00.dir\RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles\ex00.dir\RelWithDebInfo\src
+  TARGET_COMPILE_PDB = CMakeFiles\ex00.dir\RelWithDebInfo\
+  TARGET_PDB = RelWithDebInfo\ex00.pdb
+
+build CMakeFiles/ex00.dir/RelWithDebInfo/src/ContactList.cpp.obj: CXX_COMPILER__ex00_unscanned_RelWithDebInfo C$:/Users/Rui$ Pires/Team02-WarmUp/Module03/ex00/src/ContactList.cpp || cmake_object_order_depends_target_ex00_RELWITHDEBINFO
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles\ex00.dir\RelWithDebInfo\src\ContactList.cpp.obj.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++17
+  INCLUDES = -I"C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/include_RelWithDebInfo" -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ex00.dir\RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles\ex00.dir\RelWithDebInfo\src
+  TARGET_COMPILE_PDB = CMakeFiles\ex00.dir\RelWithDebInfo\
+  TARGET_PDB = RelWithDebInfo\ex00.pdb
 
 build CMakeFiles/ex00.dir/RelWithDebInfo/src/main.cpp.obj: CXX_COMPILER__ex00_unscanned_RelWithDebInfo C$:/Users/Rui$ Pires/Team02-WarmUp/Module03/ex00/src/main.cpp || cmake_object_order_depends_target_ex00_RELWITHDEBINFO
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -DCMAKE_INTDIR=\"RelWithDebInfo\"
@@ -66,6 +80,8 @@ build CMakeFiles/ex00.dir/RelWithDebInfo/src/main.cpp.obj: CXX_COMPILER__ex00_un
   INCLUDES = -I"C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/include_RelWithDebInfo" -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\ex00.dir\RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles\ex00.dir\RelWithDebInfo\src
+  TARGET_COMPILE_PDB = CMakeFiles\ex00.dir\RelWithDebInfo\
+  TARGET_PDB = RelWithDebInfo\ex00.pdb
 
 build CMakeFiles/ex00.dir/RelWithDebInfo/src/mainwindow.cpp.obj: CXX_COMPILER__ex00_unscanned_RelWithDebInfo C$:/Users/Rui$ Pires/Team02-WarmUp/Module03/ex00/src/mainwindow.cpp || cmake_object_order_depends_target_ex00_RELWITHDEBINFO
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -DCMAKE_INTDIR=\"RelWithDebInfo\"
@@ -74,6 +90,8 @@ build CMakeFiles/ex00.dir/RelWithDebInfo/src/mainwindow.cpp.obj: CXX_COMPILER__e
   INCLUDES = -I"C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/include_RelWithDebInfo" -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\ex00.dir\RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles\ex00.dir\RelWithDebInfo\src
+  TARGET_COMPILE_PDB = CMakeFiles\ex00.dir\RelWithDebInfo\
+  TARGET_PDB = RelWithDebInfo\ex00.pdb
 
 
 # =============================================================================
@@ -83,16 +101,17 @@ build CMakeFiles/ex00.dir/RelWithDebInfo/src/mainwindow.cpp.obj: CXX_COMPILER__e
 #############################################
 # Link the executable RelWithDebInfo\ex00.exe
 
-build RelWithDebInfo/ex00.exe: CXX_EXECUTABLE_LINKER__ex00_RelWithDebInfo CMakeFiles/ex00.dir/RelWithDebInfo/ex00_autogen/mocs_compilation_RelWithDebInfo.cpp.obj CMakeFiles/ex00.dir/RelWithDebInfo/src/Contact.cpp.obj CMakeFiles/ex00.dir/RelWithDebInfo/src/main.cpp.obj CMakeFiles/ex00.dir/RelWithDebInfo/src/mainwindow.cpp.obj | C$:/Qt/6.8.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.0/mingw_64/lib/libQt6EntryPoint.a || ex00_autogen$:RelWithDebInfo
+build RelWithDebInfo/ex00.exe: CXX_EXECUTABLE_LINKER__ex00_RelWithDebInfo CMakeFiles/ex00.dir/RelWithDebInfo/ex00_autogen/mocs_compilation_RelWithDebInfo.cpp.obj CMakeFiles/ex00.dir/RelWithDebInfo/src/Contact.cpp.obj CMakeFiles/ex00.dir/RelWithDebInfo/src/ContactList.cpp.obj CMakeFiles/ex00.dir/RelWithDebInfo/src/main.cpp.obj CMakeFiles/ex00.dir/RelWithDebInfo/src/mainwindow.cpp.obj | C$:/Qt/6.8.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.0/mingw_64/lib/libQt6EntryPoint.a || ex00_autogen$:RelWithDebInfo
   FLAGS = -O2 -g -DNDEBUG
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.8.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.8.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ex00.dir\RelWithDebInfo
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\ex00.dir\RelWithDebInfo\
   TARGET_FILE = RelWithDebInfo\ex00.exe
   TARGET_IMPLIB = RelWithDebInfo\libex00.dll.a
-  TARGET_PDB = ex00.exe.dbg
+  TARGET_PDB = RelWithDebInfo\ex00.pdb
 
 
 #############################################
