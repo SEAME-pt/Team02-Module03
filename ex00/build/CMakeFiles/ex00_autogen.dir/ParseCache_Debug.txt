@@ -711,8 +711,8 @@ C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/include/mainwindow.hpp
  mdp:C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/moc_predefs_Debug.h
  mdp:C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/include/Contact.hpp
  mdp:C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/include/mainwindow.hpp
-C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/src/Contact.cpp
 C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/src/ContactList.cpp
-C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/src/main.cpp
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/src/Contact.cpp
 C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/src/mainwindow.cpp
  uic:./ui_mainwindow.h
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/src/main.cpp

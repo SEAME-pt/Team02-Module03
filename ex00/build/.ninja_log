@@ -1,29 +1,11 @@
 # ninja log v6
-31	1161	7530713546074276	ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-31	1161	7530713546074276	ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-31	1161	7530713546074276	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-31	1161	7530713546074276	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-1179	2186	7530713547324431	CMakeFiles/ex00.dir/Debug/src/Contact.cpp.obj	8a40da7fa5c13d0b
-1184	5133	7530713547374409	CMakeFiles/ex00.dir/Debug/src/ContactList.cpp.obj	7717b9afdb562f3c
-1173	6235	7530713547273294	CMakeFiles/ex00.dir/Debug/ex00_autogen/mocs_compilation_Debug.cpp.obj	3a94671f007e0cd2
-1189	6409	7530713547424413	CMakeFiles/ex00.dir/Debug/src/main.cpp.obj	710e020f4736c76e
-1194	7035	7530713547474421	CMakeFiles/ex00.dir/Debug/src/mainwindow.cpp.obj	6a7f240313493de9
-7035	7459	7530713605891864	Debug/ex00.exe	8b2d7c1c07085015
-29	259	7530714431413112	ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-29	259	7530714431413112	ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-29	259	7530714431413112	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-29	259	7530714431413112	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-260	2907	7530714433719995	CMakeFiles/ex00.dir/Debug/src/ContactList.cpp.obj	7717b9afdb562f3c
-2907	3334	7530714460187483	Debug/ex00.exe	8b2d7c1c07085015
-25	242	7530715718761387	ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-25	242	7530715718761387	ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-25	242	7530715718761387	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-25	242	7530715718761387	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-243	3036	7530715720939248	CMakeFiles/ex00.dir/Debug/src/ContactList.cpp.obj	7717b9afdb562f3c
-3036	3572	7530715748860472	Debug/ex00.exe	8b2d7c1c07085015
-29	236	7530716354465595	ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-29	236	7530716354465595	ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-29	236	7530716354465595	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
-29	236	7530716354465595	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
-237	2878	7530716356549205	CMakeFiles/ex00.dir/Debug/src/ContactList.cpp.obj	7717b9afdb562f3c
-2878	3399	7530716382962563	Debug/ex00.exe	8b2d7c1c07085015
+27	795	7530719289207127	ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
+27	795	7530719289207127	ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
+27	795	7530719289207127	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/timestamp_Debug	9c9dfef2bf9bcdac
+27	795	7530719289207127	C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/ex00_autogen/mocs_compilation_Debug.cpp	9c9dfef2bf9bcdac
+810	1458	7530719290157613	CMakeFiles/ex00.dir/Debug/src/Contact.cpp.obj	8a40da7fa5c13d0b
+814	3227	7530719290199124	CMakeFiles/ex00.dir/Debug/src/ContactList.cpp.obj	7717b9afdb562f3c
+806	3928	7530719290117664	CMakeFiles/ex00.dir/Debug/ex00_autogen/mocs_compilation_Debug.cpp.obj	3a94671f007e0cd2
+818	3939	7530719290239141	CMakeFiles/ex00.dir/Debug/src/main.cpp.obj	710e020f4736c76e
+822	4414	7530719290279131	CMakeFiles/ex00.dir/Debug/src/mainwindow.cpp.obj	6a7f240313493de9
+4414	4727	7530719326197191	Debug/ex00.exe	8b2d7c1c07085015
