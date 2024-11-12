@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     ContactList contactList;
 
-    // contactList.createDatabase();
+    contactList.createDatabase();
 
     QObject::connect(&w, &MainWindow::addContactSignal, &contactList, &ContactList::addContact);
     QObject::connect(&w, &MainWindow::refreshSignal, &contactList, &ContactList::sendContactList);

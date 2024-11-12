@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->removeButton, &QPushButton::clicked, this, &MainWindow::removeButtonPushed);
     connect(ui->searchButton, &QPushButton::clicked, this, &MainWindow::searchButtonPushed);
     connect(ui->refreshButton, &QPushButton::clicked, this, &MainWindow::refreshButtonPushed);
+
+    refreshButtonPushed();
 }
 
 MainWindow::~MainWindow()
