@@ -7,7 +7,7 @@
 #include <iostream>
 #include <QMessageBox>
 #include "Contact.hpp"
-#include "../src/ui_editContact.h"
+#include "../ui/ui_editContact.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
