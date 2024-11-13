@@ -39,17 +39,17 @@ jobs:
         run: ls ex00/build
 
       - name: Set Execute Permission for Logic Test Executable
-        run: chmod +x ex00/build/Debug/run_tests
+        run: chmod +x ex00/build/run_tests
 
       - name: Set Execute Permission for QtTest Test Executable
-        run: chmod +x ex00/build/Debug/run_ui_tests
+        run: chmod +x ex00/build/run_ui_tests
 
       - name: Run Unit Logic Tests
         run: |
-          cd ex00/build/Debug
+          cd ex00/build
           ./run_tests
       - name: Run Unit Ui Tests
         run: |
-          cd ex00/build/Debug
+          cd ex00/build
           ./run_ui_tests
 
