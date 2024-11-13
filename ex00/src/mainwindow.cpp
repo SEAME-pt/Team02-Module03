@@ -12,12 +12,14 @@ MainWindow::MainWindow(QWidget *parent)
     editContactDialog = new QDialog(this);
     uiEditContact = new Ui::editContact;
     uiEditContact->setupUi(editContactDialog);
+    placeholder = new Contact();
 
     connect(ui->addButton, &QPushButton::clicked, this, &MainWindow::addButtonPushed);
     connect(ui->removeButton, &QPushButton::clicked, this, &MainWindow::removeButtonPushed);
     connect(ui->searchButton, &QPushButton::clicked, this, &MainWindow::searchButtonPushed);
     connect(ui->refreshButton, &QPushButton::clicked, this, &MainWindow::refreshButtonPushed);
     connect(ui->editContactButton, &QPushButton::clicked, this, &MainWindow::editButtonPushed);
+    connect(uiEditContact->buttonBox, &QDialogButtonBox::accepted, this, &MainWindow::changedDataPushed);
 
     refreshButtonPushed();
 }
@@ -27,6 +29,7 @@ MainWindow::~MainWindow()
     delete uiEditContact;
     delete editContactDialog;
     delete ui;
+    delete placeholder;
 }
 
 void MainWindow::addButtonPushed()
@@ -163,7 +166,18 @@ void MainWindow::editButtonPushed()
     uiEditContact->nameText->setText(name);
     uiEditContact->emailText->setText(email);
     uiEditContact->phoneText->setText(phone);
+
+    placeholder->setName(name.toStdString());
+    placeholder->setEmail(email.toStdString());
+    placeholder->setPhoneNumber(phone.toStdString());
+
     editContactDialog->exec();
+    emit refreshSignal();
+}
+
+void MainWindow::changedDataPushed()
+{
+    emit editContactSignal(placeholder->getName(), placeholder->getEmail(), placeholder->getPhoneNumber(), uiEditContact->nameText->text().toStdString(), uiEditContact->emailText->text().toStdString(), uiEditContact->phoneText->text().toStdString());
 }
 
 
