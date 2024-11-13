@@ -5,6 +5,7 @@
 #include <QStandardItemModel>
 #include <QMessageBox>
 #include <iostream>
+#include <QMessageBox>
 #include "Contact.hpp"
 #include "../src/ui_editContact.h"
 

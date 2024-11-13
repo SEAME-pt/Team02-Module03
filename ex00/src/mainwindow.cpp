@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->editContactButton, &QPushButton::clicked, this, &MainWindow::editButtonPushed);
     connect(uiEditContact->buttonBox, &QDialogButtonBox::accepted, this, &MainWindow::changedDataPushed);
 
-    refreshButtonPushed();
 }
 
 MainWindow::~MainWindow()
@@ -57,13 +56,12 @@ void MainWindow::addButtonPushed()
     contact->setEmail(emailText.toStdString());
     contact->setPhoneNumber(phoneText.toStdString());
 
-    int row = ui->contactTable->rowCount();
-    ui->contactTable->insertRow(row);
-    ui->contactTable->setItem(row, 0, new QTableWidgetItem(nameText));
-    ui->contactTable->setItem(row, 1, new QTableWidgetItem(emailText));
-    ui->contactTable->setItem(row, 2, new QTableWidgetItem(phoneText));
-
     emit addContactSignal(contact);
+    emit refreshSignal();
+
+    ui->nameText->clear();
+    ui->emailText->clear();
+    ui->phoneText->clear();
     emit refreshSignal();
 
     ui->nameText->clear();
@@ -75,6 +73,11 @@ void MainWindow::removeButtonPushed()
 {
     QList<QTableWidgetSelectionRange> selectedRange = ui->contactTable->selectedRanges();
 
+    if (selectedRange.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "No contacts selected.");
+        return;
+    }
     if (selectedRange.isEmpty())
     {
         QMessageBox::warning(this, "Input Error", "No contacts selected.");
@@ -128,6 +131,7 @@ void MainWindow::searchButtonPushed()
 void MainWindow::refreshButtonPushed()
 {
     emit refreshSignal();
+    ui->filterText->clear();
 }
 
 void MainWindow::refresh(std::vector<Contact*> &contactList)

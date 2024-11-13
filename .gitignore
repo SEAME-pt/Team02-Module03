@@ -1,10 +1,10 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-
-build/*
+.vscode/*
 ex00/build/*
 ex00/.vscode/*
-.vscode/*
+build/*
+
 *.autosave
 *.a
 *.core
@@ -74,3 +74,4 @@ CMakeLists.txt.user*
 # --------
 *.dll
 *.exe
+
