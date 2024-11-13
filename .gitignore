@@ -1,7 +1,10 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
-*~
+ex00/build/*
+ex00/.vscode/*
+build/*
+
 *.autosave
 *.a
 *.core
