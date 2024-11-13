@@ -12,6 +12,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+add_subdirectory(external/googletest)
+
+include_directories(external/googletest/googletest/include)
+
 set(PROJECT_SOURCES
         src/Contact.cpp
         src/ContactList.cpp
@@ -54,6 +58,23 @@ else()
 endif()
 
 target_link_libraries(ex00 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+# --- Add Google Test for Unit Testing ---
+# Create an executable for running the tests
+add_executable(run_tests
+        tests/test_contact_class.cpp
+        src/Contact.cpp
+        include/Contact.hpp
+)
+
+# Link Google Test and Google Test main libraries to the test executable
+target_link_libraries(run_tests gtest gtest_main)
+
+# Enable testing with CTest (optional)
+enable_testing()
+
+# Add the test to CTest
+add_test(NAME run_tests COMMAND run_tests)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
