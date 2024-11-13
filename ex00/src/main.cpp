@@ -15,7 +15,11 @@ int main(int argc, char *argv[])
     QObject::connect(&w, &MainWindow::refreshSignal, &contactList, &ContactList::sendContactList);
     QObject::connect(&contactList, &ContactList::sendContactListSignal, &w, &MainWindow::refresh);
     QObject::connect(&w, &MainWindow::removeContactSignal, &contactList, &ContactList::removeContact);
+    QObject::connect(&contactList, &ContactList::contactAlreadyExists, &w, &MainWindow::warningContactExists);
+    QObject::connect(&contactList, &ContactList::contactAdded, &w, &MainWindow::informationContactAdded);
+    QObject::connect(&w, &MainWindow::editContactSignal, &contactList, &ContactList::editContact);
 
+    w.refreshSignal();
     w.show();
     return a.exec();
 }

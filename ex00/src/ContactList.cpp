@@ -106,3 +106,18 @@ void ContactList::sendContactList(void)
 {
     emit sendContactListSignal(this->_contactList);
 }
+
+void ContactList::editContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber)
+{
+
+    for (auto it = this->_contactList.begin(); it != this->_contactList.end(); it++)
+    {
+        if ((*it)->getName() == nameText && (*it)->getEmail() == emailtext && (*it)->getPhoneNumber() == phoneNumber)
+        {
+            (*it)->setName(nameText);
+            (*it)->setEmail(emailtext);
+            (*it)->setPhoneNumber(phoneNumber);
+            break;
+        }
+    }
+}

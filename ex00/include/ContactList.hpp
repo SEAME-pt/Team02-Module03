@@ -25,9 +25,12 @@ public:
 
 signals:
     void sendContactListSignal(std::vector<Contact*> &contactList);
+    void contactAlreadyExists(void);
+    void contactAdded(void);
 
 public slots:
     void addContact(Contact *contact);
     void removeContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber);
     void sendContactList(void);
+    void editContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber);
 };
