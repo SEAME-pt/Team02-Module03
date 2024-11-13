@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "dev-module03-luis-00" ]
   pull_request:
     branches: [ "dev" ]
   workflow_dispatch:
