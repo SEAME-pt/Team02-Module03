@@ -59,7 +59,8 @@ void ContactList::addContact(Contact *contact)
         if ((*findIter)->getName() == contact->getName())
         {
             emit contactAlreadyExists();
-            delete contact;
+            if (contact)
+                delete contact;
             return;
         }
         findIter++;
