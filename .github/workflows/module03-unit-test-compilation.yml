@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: true  # Ensures submodules in 'external' are checked out
+
+      - name: Install Qt 6.5.0
+        uses: jurplel/install-qt-action@v2
+        with:
+          version: '6.5.0'
+          host: 'linux'
+          modules: 'qtbase'
+
+      - name: Verify Qt Installation
+        run: ls -R /home/runner/work/Team02-Module03/Qt
+
+      - name: Compile the project
+        run: |
+          cd ex00  # Move to the ex00 directory where CMakeLists.txt is located
+          mkdir -p build
+          cd build
+          cmake -DCMAKE_PREFIX_PATH=/home/runner/work/Team02-Module03/Qt/6.5.0/gcc_64 ..
+          cmake --build .
+
+      - name: Verify Build Output
+        run: ls ex00/build
+
+      - name: Set Execute Permission for Test Executable
+        run: chmod +x ex00/build/run_tests
+
+      - name: Run Unit Tests
+        run: |
+          cd ex00/build
+          ./run_tests
+
