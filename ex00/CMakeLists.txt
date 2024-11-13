@@ -12,22 +12,28 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-# set(PROJECT_SOURCES
-#         main.cpp
-#         mainwindow.cpp
-#         mainwindow.h
-#         mainwindow.ui
-# )
+set(PROJECT_SOURCES
+        src/Contact.cpp
+        src/ContactList.cpp
+        src/main.cpp
+        src/mainwindow.cpp
+)
 
-file(GLOB_RECURSE PROJECT_SOURCES src/*.cpp src/*.ui)
+set(PROJECT_HEADERS
+        include/Contact.hpp
+        include/ContactList.hpp
+        include/mainwindow.hpp
+)
 
-# Add all header files in include directory
-file(GLOB_RECURSE PROJECT_HEADERS include/*.hpp)
+set(PROJECT_UI
+        ui/mainwindow.ui
+)
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ex00
         MANUAL_FINALIZATION
-            ${PROJECT_SOURCES} ${PROJECT_HEADERS}
+            ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_UI}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ex00 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -36,13 +42,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 else()
     if(ANDROID)
         add_library(ex00 SHARED
-            ${PROJECT_SOURCES} ${PROJECT_HEADERS}
+            ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_UI}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(ex00
-            ${PROJECT_SOURCES} ${PROJECT_HEADERS}
+            ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_UI}
         )
     endif()
 endif()
