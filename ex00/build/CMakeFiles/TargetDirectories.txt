@@ -1,0 +1,8 @@
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/ex00.dir
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/edit_cache.dir
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/install.dir
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/install/local.dir
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/install/strip.dir
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/ex00_autogen_timestamp_deps.dir
+C:/Users/Rui Pires/Team02-WarmUp/Module03/ex00/build/CMakeFiles/ex00_autogen.dir
