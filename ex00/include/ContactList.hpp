@@ -32,4 +32,5 @@ public slots:
     void addContact(Contact *contact);
     void removeContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber);
     void sendContactList(void);
+    void editContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber, const std::string& newName, const std::string& newEmail, const std::string& newPhone);
 };

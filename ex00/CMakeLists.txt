@@ -31,6 +31,7 @@ set(PROJECT_HEADERS
 
 set(PROJECT_UI
         ui/mainwindow.ui
+        ui/editContact.ui
 )
 
 
