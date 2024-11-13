@@ -9,8 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Test)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Test)
 
 add_subdirectory(external/googletest)
 
@@ -62,13 +62,31 @@ target_link_libraries(ex00 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 # --- Add Google Test for Unit Testing ---
 # Create an executable for running the tests
 add_executable(run_tests
-        tests/test_contact_class.cpp
+        tests/logic/test_contact_class.cpp
+        tests/logic/test_contactlist_class.cpp
         src/Contact.cpp
         include/Contact.hpp
+        src/ContactList.cpp
+        include/ContactList.hpp
 )
 
 # Link Google Test and Google Test main libraries to the test executable
-target_link_libraries(run_tests gtest gtest_main)
+target_link_libraries(run_tests gtest gtest_main Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Test)
+
+
+# --- Add QT Test for Unit Testing ---
+# Create an executable for running the tests
+add_executable(run_ui_tests
+        tests/ui/test_ui.cpp
+        src/mainwindow.cpp
+        include/mainwindow.hpp
+        src/Contact.cpp
+        include/Contact.hpp
+        src/ContactList.cpp
+        include/ContactList.hpp
+)
+
+target_link_libraries(run_ui_tests Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Test)
 
 # Enable testing with CTest (optional)
 enable_testing()
