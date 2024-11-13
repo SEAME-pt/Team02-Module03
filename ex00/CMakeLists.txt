@@ -9,25 +9,35 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Test)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Test)
 
-# set(PROJECT_SOURCES
-#         main.cpp
-#         mainwindow.cpp
-#         mainwindow.h
-#         mainwindow.ui
-# )
+add_subdirectory(external/googletest)
 
-file(GLOB_RECURSE PROJECT_SOURCES src/*.cpp src/*.ui)
+include_directories(external/googletest/googletest/include)
 
-# Add all header files in include directory
-file(GLOB_RECURSE PROJECT_HEADERS include/*.hpp)
+set(PROJECT_SOURCES
+        src/Contact.cpp
+        src/ContactList.cpp
+        src/main.cpp
+        src/mainwindow.cpp
+)
+
+set(PROJECT_HEADERS
+        include/Contact.hpp
+        include/ContactList.hpp
+        include/mainwindow.hpp
+)
+
+set(PROJECT_UI
+        ui/mainwindow.ui
+)
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ex00
         MANUAL_FINALIZATION
-            ${PROJECT_SOURCES} ${PROJECT_HEADERS}
+            ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_UI}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ex00 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -36,18 +46,53 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 else()
     if(ANDROID)
         add_library(ex00 SHARED
-            ${PROJECT_SOURCES} ${PROJECT_HEADERS}
+            ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_UI}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(ex00
-            ${PROJECT_SOURCES} ${PROJECT_HEADERS}
+            ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_UI}
         )
     endif()
 endif()
 
 target_link_libraries(ex00 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+# --- Add Google Test for Unit Testing ---
+# Create an executable for running the tests
+add_executable(run_tests
+        tests/logic/test_contact_class.cpp
+        tests/logic/test_contactlist_class.cpp
+        src/Contact.cpp
+        include/Contact.hpp
+        src/ContactList.cpp
+        include/ContactList.hpp
+)
+
+# Link Google Test and Google Test main libraries to the test executable
+target_link_libraries(run_tests gtest gtest_main Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Test)
+
+
+# --- Add QT Test for Unit Testing ---
+# Create an executable for running the tests
+add_executable(run_ui_tests
+        tests/ui/test_ui.cpp
+        src/mainwindow.cpp
+        include/mainwindow.hpp
+        src/Contact.cpp
+        include/Contact.hpp
+        src/ContactList.cpp
+        include/ContactList.hpp
+)
+
+target_link_libraries(run_ui_tests Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Test)
+
+# Enable testing with CTest (optional)
+enable_testing()
+
+# Add the test to CTest
+add_test(NAME run_tests COMMAND run_tests)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
