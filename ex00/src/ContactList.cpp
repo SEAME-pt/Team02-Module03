@@ -53,6 +53,17 @@ void ContactList::createDatabase()
 
 void ContactList::addContact(Contact *contact)
 {
+    std::vector<Contact *>::iterator findIter = _contactList.begin();
+    while (findIter < _contactList.end())
+    {
+        if ((*findIter)->getName() == contact->getName())
+        {
+            emit contactAlreadyExists();
+            delete contact;
+            return;
+        }
+        findIter++;
+    }
     this->_contactList.push_back(contact);
     std::ofstream outFile;
 
@@ -61,6 +72,7 @@ void ContactList::addContact(Contact *contact)
         << contact->getEmail() << ","
         << contact->getPhoneNumber() << "\n";
     outFile.close();
+    emit contactAdded();
 }
 
 void ContactList::removeContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber)

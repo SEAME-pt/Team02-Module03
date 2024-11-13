@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QStandardItemModel>
 #include <iostream>
+#include <QMessageBox>
 #include "Contact.hpp"
 
 QT_BEGIN_NAMESPACE
@@ -33,6 +34,8 @@ private slots:
 
 public slots:
     void refresh(std::vector<Contact*> &contactList);
+    void warningContactExists();
+    void informationContactAdded();
 
 private:
     Ui::MainWindow *ui;
