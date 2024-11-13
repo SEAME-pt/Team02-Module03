@@ -1,7 +1,0 @@
-C:/Users/Jorge/Team02-Module03-1/build/CMakeFiles/ex00.dir
-C:/Users/Jorge/Team02-Module03-1/build/CMakeFiles/edit_cache.dir
-C:/Users/Jorge/Team02-Module03-1/build/CMakeFiles/rebuild_cache.dir
-C:/Users/Jorge/Team02-Module03-1/build/CMakeFiles/install.dir
-C:/Users/Jorge/Team02-Module03-1/build/CMakeFiles/install/local.dir
-C:/Users/Jorge/Team02-Module03-1/build/CMakeFiles/install/strip.dir
-C:/Users/Jorge/Team02-Module03-1/build/CMakeFiles/ex00_autogen.dir
