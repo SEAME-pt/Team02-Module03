@@ -14,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->searchButton, &QPushButton::clicked, this, &MainWindow::searchButtonPushed);
     connect(ui->refreshButton, &QPushButton::clicked, this, &MainWindow::refreshButtonPushed);
 
-    refreshButtonPushed();
 }
 
 MainWindow::~MainWindow()
@@ -28,24 +27,41 @@ void MainWindow::addButtonPushed()
     QString emailText = ui->emailText->text();
     QString phoneText = ui->phoneText->text();
 
+    if (nameText.isEmpty() || phoneText.isEmpty() || emailText.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "All fields must be filled out.");
+        return;
+    }
+    bool ok;
+    long number = phoneText.toLong(&ok);
+    if (!ok)
+    {
+        QMessageBox::warning(this, "Input Error", "Number must be a valid integer.");
+        return;
+    }
+
     Contact *contact = new Contact;
     contact->setName(nameText.toStdString());
     contact->setEmail(emailText.toStdString());
     contact->setPhoneNumber(phoneText.toStdString());
 
-    int row = ui->contactTable->rowCount();
-    ui->contactTable->insertRow(row);
-    ui->contactTable->setItem(row, 0, new QTableWidgetItem(nameText));
-    ui->contactTable->setItem(row, 1, new QTableWidgetItem(emailText));
-    ui->contactTable->setItem(row, 2, new QTableWidgetItem(phoneText));
-
     emit addContactSignal(contact);
+    emit refreshSignal();
+
+    ui->nameText->clear();
+    ui->emailText->clear();
+    ui->phoneText->clear();
 }
 
 void MainWindow::removeButtonPushed()
 {
     QList<QTableWidgetSelectionRange> selectedRange = ui->contactTable->selectedRanges();
 
+    if (selectedRange.isEmpty())
+    {
+        QMessageBox::warning(this, "Input Error", "No contacts selected.");
+        return;
+    }
     for (QTableWidgetSelectionRange range : selectedRange)
     {
         for (int row = range.topRow(); row <= range.bottomRow(); row++)
@@ -94,6 +110,7 @@ void MainWindow::searchButtonPushed()
 void MainWindow::refreshButtonPushed()
 {
     emit refreshSignal();
+    ui->filterText->clear();
 }
 
 void MainWindow::refresh(std::vector<Contact*> &contactList)
@@ -108,4 +125,14 @@ void MainWindow::refresh(std::vector<Contact*> &contactList)
         ui->contactTable->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(contact->getEmail())));
         ui->contactTable->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(contact->getPhoneNumber())));
     }
+}
+
+void MainWindow::warningContactExists()
+{
+    QMessageBox::warning(this, "Input incorrect", "Contact is already on list");
+}
+
+void MainWindow::informationContactAdded()
+{
+     QMessageBox::information(this, "Contact Added", "Contact was successfuly added to list.");
 }
