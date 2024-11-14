@@ -39,7 +39,7 @@ jobs:
         run: ls ex00/build
 
       - name: Set Execute Permission for Logic Test Executable
-        run: chmod +x ex00/build/Debug/*
+        run: chmod +x ex00/build/*
 
       - name: Run Unit Logic Tests
         run: |
