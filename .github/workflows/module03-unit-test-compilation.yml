@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "25-unit-test-solve-yaml-problems" ]
   pull_request:
-    branches: [ "25-unit-test-solve-yaml-problems" ]
+    branches: [ "dev" ]
   workflow_dispatch:
 
 jobs:
@@ -29,7 +29,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libxcb-xinerama0 libxcb-xinput0 libxkbcommon-x11-0 libxcb-xfixes0-dev \
                                   libxcb-util1 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 \
-                                  libxcb-render-util0 libxcb-randr0 libxcb-xkb1 libxkbcommon-dev
+                                  libxcb-render-util0 libxcb-randr0 libxcb-xkb1 libxkbcommon-dev \
+                                  libx11-xcb1
+
+      - name: Set DISPLAY Environment Variable
+        run: echo "DISPLAY=:99" >> $GITHUB_ENV
 
       - name: Verify Qt Installation
         run: ls -R /home/runner/work/Team02-Module03/Qt
@@ -54,6 +58,8 @@ jobs:
           ./run_tests
 
       - name: Run Unit Ui Tests
+        env:
+          DISPLAY: ":99"
         run: |
           cd ex00/build/
           ./run_ui_tests
