@@ -31,9 +31,10 @@ jobs:
                                   libxcb-util1 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 \
                                   libxcb-render-util0 libxcb-randr0 libxcb-xkb1 libxkbcommon-dev \
                                   libx11-xcb1 xvfb
-
       - name: Set Permissions for Qt Plugin Directory
-        run: sudo chmod -R 755 /home/runner/work/Team02-Module03/Qt/6.5.0/gcc_64/plugins
+        run: |
+          sudo chmod -R 755 /home/runner/work/Team02-Module03/Qt/6.5.0/gcc_64/plugins
+          sudo chmod -R 755 /home/runner/work/Team02-Module03/Qt/6.5.0/gcc_64/lib
 
       - name: Start Xvfb (Virtual Display)
         run: |
@@ -42,35 +43,44 @@ jobs:
         shell: bash
 
       - name: Verify Qt Installation
-        run: ls -R /home/runner/work/Team02-Module03/Qt
-
-      - name: Compile the project
         run: |
-          cd ex00  # Move to the ex00 directory where CMakeLists.txt is located
+          echo "Verifying Qt Installation at /home/runner/work/Team02-Module03/Qt"
+          ls -R /home/runner/work/Team02-Module03/Qt
+
+      - name: Compile the project with CMake
+        run: |
+          cd ex00
           mkdir -p build
           cd build
           cmake -DCMAKE_PREFIX_PATH=/home/runner/work/Team02-Module03/Qt/6.5.0/gcc_64 ..
           cmake --build .
+        shell: bash
+        continue-on-error: false
 
-      - name: Build Output Files
-        run: ls ex00/build
-  
-      - name: Build Output Files
+      - name: List Build Output Files
         run: |
-          ls
-          ls ex00/
+          echo "Listing build directory contents for diagnostics:"
+          ls -la ex00/build
 
-      - name: Set Execute Permission for Logic Test Executable
-        run: chmod +x ex00/build/*
+      - name: Set Execute Permission for Test Executables
+        run: |
+          chmod +x ex00/build/*
+          echo "Permissions set for test executables in ex00/build/"
 
       - name: Run Unit Logic Tests
         run: |
           cd ex00/build/
-          ./run_tests
+          echo "Running unit logic tests"
+          ./run_tests || { echo "Logic tests failed"; exit 1; }
+        shell: bash
+        continue-on-error: false
 
-      - name: Run Unit Ui Tests
+      - name: Run Unit UI Tests
         env:
           DISPLAY: ":99"
+          QT_DEBUG_PLUGINS: "1"  # Enable detailed plugin debug logging
         run: |
           cd ex00/build/
-          ./run_ui_tests
+          echo "Running unit UI tests with detailed plugin logging"
+          ./run_ui_tests || { echo "UI tests failed"; exit 1; }
+        shell: bash
