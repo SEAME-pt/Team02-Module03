@@ -48,6 +48,6 @@ jobs:
 
       - name: Run Unit Ui Tests
         run: |
-          cd ex00/build/Debug
+          cd ex00/build/
           ./run_ui_tests
 
