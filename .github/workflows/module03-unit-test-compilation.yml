@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "25-unit-test-solve-yaml-problems" ]
   pull_request:
-    branches: [ "dev" ]
+    branches: [ "25-unit-test-solve-yaml-problems" ]
   workflow_dispatch:
 
 jobs:
@@ -24,10 +24,12 @@ jobs:
           host: 'linux'
           modules: 'qtbase'
 
-      - name: Install Dependencies for Qt xcb Plugin
+      - name: Install Additional Dependencies for Qt xcb Plugin
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxcb-xinerama0 libxcb-xinput0 libxkbcommon-x11-0 libxcb-xfixes0-dev
+          sudo apt-get install -y libxcb-xinerama0 libxcb-xinput0 libxkbcommon-x11-0 libxcb-xfixes0-dev \
+                                  libxcb-util1 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 \
+                                  libxcb-render-util0 libxcb-randr0 libxcb-xkb1 libxkbcommon-dev
 
       - name: Verify Qt Installation
         run: ls -R /home/runner/work/Team02-Module03/Qt
