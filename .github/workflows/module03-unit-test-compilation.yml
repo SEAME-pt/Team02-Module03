@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ "25-unit-test-solve-yaml-problems" ]
+    branches: [ "dev" ]
   pull_request:
     branches: [ "dev" ]
   workflow_dispatch:
