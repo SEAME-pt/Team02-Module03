@@ -53,6 +53,18 @@ void ContactList::createDatabase()
 
 void ContactList::addContact(Contact *contact)
 {
+    std::vector<Contact *>::iterator findIter = _contactList.begin();
+    while (findIter < _contactList.end())
+    {
+        if ((*findIter)->getName() == contact->getName())
+        {
+            emit contactAlreadyExists();
+            if (contact)
+                delete contact;
+            return;
+        }
+        findIter++;
+    }
     this->_contactList.push_back(contact);
     std::ofstream outFile;
 
@@ -61,6 +73,7 @@ void ContactList::addContact(Contact *contact)
         << contact->getEmail() << ","
         << contact->getPhoneNumber() << "\n";
     outFile.close();
+    emit contactAdded();
 }
 
 void ContactList::removeContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber)
@@ -105,4 +118,30 @@ void ContactList::removeContact(const std::string& nameText, const std::string& 
 void ContactList::sendContactList(void)
 {
     emit sendContactListSignal(this->_contactList);
+}
+
+void ContactList::editContact(const std::string& nameText, const std::string& emailtext, const std::string& phoneNumber, const std::string& newName, const std::string& newEmail, const std::string& newPhone)
+{
+
+    for (auto it = this->_contactList.begin(); it != this->_contactList.end(); it++)
+    {
+        if ((*it)->getName() == nameText && (*it)->getEmail() == emailtext && (*it)->getPhoneNumber() == phoneNumber)
+        {
+            (*it)->setName(newName);
+            (*it)->setEmail(newEmail);
+            (*it)->setPhoneNumber(newPhone);
+            break;
+        }
+    }
+    std::ofstream outFile;
+    outFile.open("temp.csv", std::ios::app);
+    for (auto it = this->_contactList.begin(); it != this->_contactList.end(); it++)
+    {
+        outFile << (*it)->getName() << ","
+        << (*it)->getEmail() << ","
+        << (*it)->getPhoneNumber() << "\n";
+    }
+    outFile.close();
+    std::remove(this->_database.c_str());
+    std::rename("temp.csv", this->_database.c_str());
 }
